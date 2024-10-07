@@ -1,9 +1,12 @@
 import React from "react";
-import qaycoffee from "../../../public/assets/project/qaycoffee3.png";
+import qaycoffee from "../../assets/qaycoffee3.png";
+import qayburger from "../../assets/qayburger.png";
+import paradiseview from "../../assets//paradise-view.png";
+
 const projectsData = [
   {
     id: 1,
-    image: "../../../public/assets/project/qaycoffee3.png",
+    image: qaycoffee,
     title: "Qaycoffee",
     description:
       "The QayCoffee website was developed as a personal project with the primary goal of enhancing my skills and familiarizing myself with modern web development tools, specifically ReactJS, Vite, and Tailwind CSS. Throughout this project, I aimed to create a clean, responsive, and user-friendly interface that showcases various coffee products.",
@@ -11,7 +14,7 @@ const projectsData = [
   },
   {
     id: 2,
-    image: "../../../public/assets/project/qayburger.png",
+    image: qayburger,
     title: "Qayemi Burger",
     description:
       "Qayemi Burger is a landing page website project for a fictional burger restaurant. The aim of this project is to create an engaging visual experience for users while showcasing important information about the products and services offered by Qay Burger. The website is designed to be responsive and interactive across various devices",
@@ -19,7 +22,7 @@ const projectsData = [
   },
   {
     id: 3,
-    image: "../../../public/assets/project/paradise-view.png",
+    image: paradiseview,
     title: "Paradise View",
     description:
       "The Paradise View project is a personal endeavor where I focused on slicing a web design specifically for desktop view, inspired by a layout created in Figma. Utilizing React, Vite, and Tailwind CSS, my goal was to translate the design into a fully functional and visually appealing website.",
