@@ -1,9 +1,16 @@
 import React from 'react'
+import Header from '../components/Home/Header'
+import About from '../components/Home/About'
+import Projects from '../components/Home/Projects'
+import ContactForm from '../components/Home/Contact'
 
 const Home = () => {
   return (
-    <div className="h-screen flex justify-center text-center items-center text-6xl font-playfair">
-      Its Home!
+    <div className="">
+      <Header />
+      <About />
+      <Projects />
+      <ContactForm />
     </div>
   )
 }
