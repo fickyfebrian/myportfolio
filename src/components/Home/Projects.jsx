@@ -31,7 +31,7 @@ const projectsData = [
 const Projects = () => {
   return (
     <section id="projects">
-      <div className="mt-20 max-w-7xl mx-auto px-6 md:px-12">
+      <div className="mt-20 justify-center items-center max-w-7xl mx-auto px-6 md:px-12">
         <h2 className="text-4xl font-bold font-montserrat text-center">
           Personal Projects
         </h2>
@@ -61,17 +61,28 @@ const Projects = () => {
                 <h3 className="text-2xl font-semibold font-montserrat mb-4">
                   {project.title}
                 </h3>
-                <p className="text-xl mb-6 font-roboto">{project.description}</p>
+                <p className="text-xl mb-6 font-roboto">
+                  {project.description}
+                </p>
                 <a
-                target="_blank"
+                  target="_blank"
                   href={project.link}
-                  className="bg-orange font-roboto text-xl text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition duration-300 inline-block text-center w-full md:w-auto"
+                  className="bg-orange font-roboto text-xl text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 inline-block text-center w-full md:w-auto"
                 >
                   View Project
                 </a>
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-center mt-14">
+          <a
+            target="_blank"
+            href="/portfolio"
+            className="bg-orange font-roboto text-xl text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 inline-block text-center w-full md:w-auto"
+            >
+            All my projects
+          </a>
         </div>
       </div>
     </section>
