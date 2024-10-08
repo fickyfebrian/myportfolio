@@ -31,12 +31,12 @@ const Header = () => {
       </div>
 
       {/* Arrow Button */}
-      <div className="relative pb-8 flex justify-center">
+      <div className="relative pb-20 sm:pb-28 md:pb-16 lg:pb-8 flex justify-center">
         <button
           onClick={() => (window.location.href = "#about")}
           className="text-black flex items-center justify-center"
         >
-          <RiArrowDownSLine className="animate-bounce sm:text-2xl md:text-4xl lg:text-6xl text-3xl" />
+          <RiArrowDownSLine className="animate-bounce sm:text-3xl md:text-4xl lg:text-6xl text-4xl" />
         </button>
       </div>
     </div>

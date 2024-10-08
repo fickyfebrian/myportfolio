@@ -1,9 +1,14 @@
 import React from "react";
+import Header from "../components/Portfolio/header";
+import PersonalProjects from "../components/Portfolio/PersonalProjects";
+import TeamProjects from "../components/Portfolio/TeamProjects";
 
 const Portfolio = () => {
   return (
-    <div className="h-screen flex justify-center text-center items-center text-6xl font-playfair">
-      On progress..
+    <div className="">
+      <Header />
+      <PersonalProjects />
+      <TeamProjects />
     </div>
   );
 };

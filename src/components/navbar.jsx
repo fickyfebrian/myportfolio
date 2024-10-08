@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import FF from "../../public/assets/project/FFLogo2.png";
-import { RiArrowUpDownLine } from "react-icons/ri";
 import { IoIosArrowUp } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [showGoToTop, setShowGoToTop] = useState(false);
-  const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
@@ -21,7 +20,7 @@ export default function Navbar() {
       }
       setLastScrollY(window.scrollY);
       setIsScrolled(window.scrollY > 0);
-      setShowGoToTop(window.scrollY > 300); // Show Go to Top button when scrolled down more than 300px
+      setShowGoToTop(window.scrollY > 300);
     }
   };
 
@@ -42,26 +41,73 @@ export default function Navbar() {
     }
   }, [sidebarOpen]);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
-
   const goToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const handleNavigate = (path, sectionId) => {
+    navigate(path);
+    setSidebarOpen(false);
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
+  const NavItems = ({ onClick }) => (
+    <>
+      <li className="relative group">
+        <button
+          onClick={() => {
+            handleNavigate("/");
+            onClick && onClick();
+          }}
+          className="text-black text-2xl"
+        >
+          Home
+          <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
+        </button>
+      </li>
+      <li className="relative group">
+        <button
+          onClick={() => {
+            handleNavigate("/", "about");
+            onClick && onClick();
+          }}
+          className="text-black text-2xl"
+        >
+          About
+          <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
+        </button>
+      </li>
+      <li className="relative group">
+        <button
+          onClick={() => {
+            navigate("/portfolio");
+            onClick && onClick();
+          }}
+          className="text-black text-2xl"
+        >
+          Projects
+          <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
+        </button>
+      </li>
+      <li className="relative group">
+        <button
+          onClick={() => {
+            handleNavigate("/", "contact");
+            onClick && onClick();
+          }}
+          className="text-black text-2xl"
+        >
+          Contact
+          <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
+        </button>
+      </li>
+    </>
+  );
 
   return (
     <>
@@ -81,30 +127,7 @@ export default function Navbar() {
 
             {/* Navigasi */}
             <ul className="hidden md:flex space-x-8 font-poppins">
-              <li className="relative group">
-                <a href="/" className="text-black text-2xl">
-                  Home
-                  <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
-                </a>
-              </li>
-              <li className="relative group">
-                <a href="#about" className="text-black text-2xl">
-                  About
-                  <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
-                </a>
-              </li>
-              <li className="relative group">
-                <a href="#projects" className="text-black text-2xl">
-                  Projects
-                  <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
-                </a>
-              </li>
-              <li className="relative group">
-                <a href="#contact" className="text-black text-2xl">
-                  Contact
-                  <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
-                </a>
-              </li>
+              <NavItems />
             </ul>
 
             <div className="md:hidden">
@@ -145,45 +168,21 @@ export default function Navbar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 right-0 z-50 w-[400px] bg-white transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 z-50 w-[300px] bg-white transition-transform duration-300 ease-in-out ${
           sidebarOpen ? "transform translate-x-0" : "transform translate-x-full"
         } md:hidden`}
       >
-        <div className="flex flex-col p-4 space-y-4 text-center items-center justify-center min-h-screen">
+        <div className="flex flex-col p-4 space-y-8 text-center items-center justify-center min-h-screen">
           <button
             className="absolute top-4 right-4 text-black text-4xl z-10"
             onClick={() => setSidebarOpen(false)}
           >
             &times;
           </button>
-          <a
-            href="/"
-            className="text-black text-2xl"
-            onClick={() => setSidebarOpen(false)}
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className="text-black text-2xl"
-            onClick={() => setSidebarOpen(false)}
-          >
-            About
-          </a>
-          <a
-            href="#projects"
-            className="text-black text-2xl"
-            onClick={() => setSidebarOpen(false)}
-          >
-            Projects
-          </a>
-          <a
-            href="#contact"
-            className="text-black text-2xl"
-            onClick={() => setSidebarOpen(false)}
-          >
-            Contact
-          </a>
+          <img src={FF} alt="Logo" className="h-28 mb-8" />
+          <ul className="space-y-6 font-poppins">
+            <NavItems onClick={() => setSidebarOpen(false)} />
+          </ul>
         </div>
       </div>
 

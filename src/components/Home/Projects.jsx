@@ -80,7 +80,6 @@ const Projects = () => {
         </div>
         <div className="flex justify-center mt-14">
           <a
-            target="_blank"
             href="/portfolio"
             className="bg-orange font-roboto text-xl text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 inline-block text-center w-full md:w-auto"
             >
