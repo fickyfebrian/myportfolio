@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Portfolio/header";
+import Header from "../components/Portfolio/Header";
 import PersonalProjects from "../components/Portfolio/PersonalProjects";
 import TeamProjects from "../components/Portfolio/TeamProjects";
 
