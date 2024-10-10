@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --scrollbar-width: 10px;
+  --scrollbar-height: 240px;
+  --scrollbar-padding: 4px;
+}
+
+/* Sembunyikan scrollbar default */
+body {
+  scrollbar-width: none; /* Untuk Firefox */
+  -ms-overflow-style: none; /* Untuk Internet Explorer dan Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Untuk Webkit-based browser seperti Chrome, Safari, dan Edge */
+}
+
+/* Styling untuk container scrollbar kustom */
+#custom-scrollbar {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  width: var(--scrollbar-width);
+  height: 250px;
+  background: rgb(214, 212, 212); /* Menggunakan warna putih untuk background */
+  border-radius: 9999px; /* Rounded corners untuk tampilan minimalis */
+  transform: translateY(-50%);
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Thumb scrollbar kustom */
+#custom-scrollbar-thumb {
+  width: 100%;
+  height: 40%;
+  background: rgb(117, 117, 117); 
+  border-radius: 9999px;
+  position: absolute;
+  top: 0;
+  transition: top 0.1s ease;
+}
+
+#custom-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Scroll behavior untuk container */
+body {
+  overflow-y: scroll;
+}
+
+/* Menghilangkan scrollbar default untuk semua elemen */
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+
+/* Menghilangkan scrollbar default untuk WebKit browsers (Chrome, Safari, dll) */
+*::-webkit-scrollbar { 
+    display: none;  
+}
+
+html {
+    scroll-behavior: smooth;
+}
+@media (max-width: 768px) {
+    #custom-scrollbar {
+      opacity: 0; 
+      pointer-events: none; 
+    }
+}  
