@@ -9,6 +9,7 @@ import {
   FaGitAlt,
 } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
+import cvFicky from "../../../public/assets/project/CV-Ficky.pdf"
 
 const skills = [
   { icon: <FaHtml5 className="text-6xl text-orange" />, label: "HTML5" },
@@ -63,7 +64,7 @@ const About = () => (
           Contact
         </button>
         <a
-          href="https://docs.google.com/document/d/1L8ku9USKZ6wS5i4megkf0ZNhXLf2xJMBbZRAvrO9ktQ/edit?usp=sharing"
+          href= {cvFicky}
           target="_blank"
           className="bg-blue text-white font-roboto px-6 py-4 rounded-lg shadow hover:scale-105 transition duration-300 ml-4"
         >
