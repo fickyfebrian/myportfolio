@@ -17,7 +17,7 @@ const Mora = () => {
   };
 
   const handleWhatsapp = () => {
-    window.location.href = 'https://wa.me/085794431259';
+    window.location.href = 'https://wa.me/+6285794431259';
   };
 
   return (
