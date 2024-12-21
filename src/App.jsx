@@ -4,14 +4,21 @@ import Navbar from './components/navbar';
 import Home from './pages/Home';
 import Footer from './components/footer';
 import Portfolio from './pages/Portfolio';
+import Mora from './pages/mora';
 
 function CustomScrollbar() {
   const [thumbPosition, setThumbPosition] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-      const scrollbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--scrollbar-height'));
+      const scrollPercentage =
+        window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight);
+      const scrollbarHeight = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue(
+          '--scrollbar-height',
+        ),
+      );
       const thumbHeight = scrollbarHeight * 0.3; // 30% of scrollbar height
       const maxThumbPosition = scrollbarHeight - thumbHeight;
       const newPosition = scrollPercentage * maxThumbPosition;
@@ -24,10 +31,7 @@ function CustomScrollbar() {
 
   return (
     <div id="custom-scrollbar">
-      <div 
-        id="custom-scrollbar-thumb" 
-        style={{ top: `${thumbPosition}px` }}
-      />
+      <div id="custom-scrollbar-thumb" style={{ top: `${thumbPosition}px` }} />
     </div>
   );
 }
@@ -39,6 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/morasayang" element={<Mora />} />
       </Routes>
       <Footer />
       <CustomScrollbar />

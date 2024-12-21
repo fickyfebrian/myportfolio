@@ -17,8 +17,14 @@ export default {
       blue2: "#08C2FF",
       yellow: "#F3C623",
       indigo: "#7E60BF",
-
+      mora: {
+        pink: "#F875AA",
+        lightPink: "#FFDFDF",
+        veryLightPink: "#FFF6F6",
+        lightBlue: "#AEDEFC",
+      },
     },
+
     extend: {},
   },
   plugins: [],
