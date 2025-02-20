@@ -1,32 +1,32 @@
-import React from "react";
-import qaycoffee from "../../assets/qaycoffee3.png";
-import qayburger from "../../assets/qayburger.png";
-import paradiseview from "../../assets//paradise-view.png";
+import React from 'react';
+import qaycoffee from '../../assets/qaycoffee3.png';
+import qayburger from '../../assets/qayburger.png';
+import paradiseview from '../../assets//paradise-view.png';
 
 const projectsData = [
   {
     id: 1,
     image: qaycoffee,
-    title: "Qaycoffee",
+    title: 'Qaycoffee',
     description:
-      "The QayCoffee website was developed as a personal project with the primary goal of enhancing my skills and familiarizing myself with modern web development tools, specifically ReactJS, Vite, and Tailwind CSS. Throughout this project, I aimed to create a clean, responsive, and user-friendly interface that showcases various coffee products.",
-    link: "https://qaycoffee.netlify.app/",
+      'The QayCoffee website was developed as a personal project with the primary goal of enhancing my skills and familiarizing myself with modern web development tools, specifically ReactJS, Vite, and Tailwind CSS. Throughout this project, I aimed to create a clean, responsive, and user-friendly interface that showcases various coffee products.',
+    link: 'https://qaycoffee.netlify.app/',
   },
   {
     id: 2,
     image: qayburger,
-    title: "Qayemi Burger",
+    title: 'Qayemi Burger',
     description:
-      "Qayemi Burger is a landing page website project for a fictional burger restaurant. The aim of this project is to create an engaging visual experience for users while showcasing important information about the products and services offered by Qay Burger. The website is designed to be responsive and interactive across various devices",
-    link: "https://qayburger.netlify.app/",
+      'Qayemi Burger is a landing page website project for a fictional burger restaurant. The aim of this project is to create an engaging visual experience for users while showcasing important information about the products and services offered by Qay Burger. The website is designed to be responsive and interactive across various devices',
+    link: 'https://qayburger.netlify.app/',
   },
   {
     id: 3,
     image: paradiseview,
-    title: "Paradise View",
+    title: 'Paradise View',
     description:
-      "The Paradise View project is a personal endeavor where I focused on slicing a web design specifically for desktop view, inspired by a layout created in Figma. Utilizing React, Vite, and Tailwind CSS, my goal was to translate the design into a fully functional and visually appealing website.",
-    link: "https://paradise-view.netlify.app/",
+      'The Paradise View project is a personal endeavor where I focused on slicing a web design specifically for desktop view, inspired by a layout created in Figma. Utilizing React, Vite, and Tailwind CSS, my goal was to translate the design into a fully functional and visually appealing website.',
+    link: 'https://paradise-view.netlify.app/',
   },
   // Add more projects as needed
 ];
@@ -34,7 +34,7 @@ const projectsData = [
 const Projects = () => {
   return (
     <section id="projects">
-      <div className="mt-20 justify-center items-center max-w-7xl mx-auto px-6 md:px-12">
+      <div className="mt-12 justify-center items-center max-w-7xl mx-auto px-6 md:px-12">
         <h2 className="text-4xl font-bold font-montserrat text-center">
           Personal Projects
         </h2>
@@ -82,7 +82,7 @@ const Projects = () => {
           <a
             href="/portfolio"
             className="bg-orange font-roboto text-xl text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 inline-block text-center w-full md:w-auto"
-            >
+          >
             All my projects
           </a>
         </div>

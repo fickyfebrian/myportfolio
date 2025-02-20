@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   FaHtml5,
   FaCss3Alt,
@@ -7,25 +7,29 @@ import {
   FaPhp,
   FaLaravel,
   FaGitAlt,
-} from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
-import cvFicky from "../../../public/assets/project/CV-Ficky.pdf"
+} from 'react-icons/fa';
+import { SiTailwindcss, SiTypescript } from 'react-icons/si';
+import cvFicky from '../../../public/assets/project/CV-Ficky.pdf';
 
 const skills = [
-  { icon: <FaHtml5 className="text-6xl text-orange" />, label: "HTML5" },
-  { icon: <FaCss3Alt className="text-6xl text-blue" />, label: "CSS3" },
+  { icon: <FaHtml5 className="text-6xl text-orange" />, label: 'HTML5' },
+  { icon: <FaCss3Alt className="text-6xl text-blue" />, label: 'CSS3' },
   {
     icon: <FaJsSquare className="text-6xl text-yellow" />,
-    label: "JavaScript",
+    label: 'JavaScript',
   },
-  { icon: <FaReact className="text-6xl text-blue2" />, label: "React.js" },
-  { icon: <FaPhp className="text-6xl text-indigo" />, label: "PHP" },
-  { icon: <FaLaravel className="text-6xl text-orange" />, label: "Laravel" },
+  { icon: <FaReact className="text-6xl text-blue2" />, label: 'React.js' },
+  {
+    icon: <SiTypescript className="text-6xl text-blue" />,
+    label: 'Typescript',
+  },
+  { icon: <FaPhp className="text-6xl text-indigo" />, label: 'PHP' },
+  { icon: <FaLaravel className="text-6xl text-orange" />, label: 'Laravel' },
   {
     icon: <SiTailwindcss className="text-6xl text-blue2" />,
-    label: "Tailwind",
+    label: 'Tailwind',
   },
-  { icon: <FaGitAlt className="text-6xl text-orange" />, label: "Git" },
+  { icon: <FaGitAlt className="text-6xl text-orange" />, label: 'Git' },
 ];
 
 const About = () => (
@@ -58,13 +62,13 @@ const About = () => (
           opportunities and have a React Developer certificate from Dicoding.
         </p>
         <button
-          onClick={() => (window.location.href = "#contact")}
+          onClick={() => (window.location.href = '#contact')}
           className="bg-orange text-white font-roboto px-6 py-4 rounded-lg shadow hover:scale-105 transition duration-300 mr-4"
         >
           Contact
         </button>
         <a
-          href= {cvFicky}
+          href={cvFicky}
           target="_blank"
           className="bg-blue text-white font-roboto px-6 py-4 rounded-lg shadow hover:scale-105 transition duration-300 ml-4"
         >
