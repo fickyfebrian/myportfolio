@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import FF from "../../public/assets/project/FFLogo2.png";
-import { IoIosArrowUp } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useRef } from 'react';
+import FF from '../../public/assets/project/FFLogo2.png';
+import { IoIosArrowUp } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -12,7 +12,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const controlNavbar = () => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       if (window.scrollY > lastScrollY) {
         setShowNavbar(false);
       } else {
@@ -25,24 +25,24 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
       return () => {
-        window.removeEventListener("scroll", controlNavbar);
+        window.removeEventListener('scroll', controlNavbar);
       };
     }
   }, [lastScrollY]);
 
   useEffect(() => {
     if (sidebarOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     }
   }, [sidebarOpen]);
 
   const goToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNavigate = (path, sectionId) => {
@@ -51,7 +51,7 @@ export default function Navbar() {
     setTimeout(() => {
       const section = document.getElementById(sectionId);
       if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
+        section.scrollIntoView({ behavior: 'smooth' });
       }
     }, 100);
   };
@@ -61,19 +61,19 @@ export default function Navbar() {
       <li className="relative group">
         <button
           onClick={() => {
-            handleNavigate("/");
+            handleNavigate('/', 'experience');
             onClick && onClick();
           }}
           className="text-black text-2xl"
         >
-          Home
+          Experience
           <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
         </button>
       </li>
       <li className="relative group">
         <button
           onClick={() => {
-            handleNavigate("/", "about");
+            handleNavigate('/', 'about');
             onClick && onClick();
           }}
           className="text-black text-2xl"
@@ -85,24 +85,24 @@ export default function Navbar() {
       <li className="relative group">
         <button
           onClick={() => {
-            navigate("/portfolio");
+            handleNavigate('/', 'contact');
             onClick && onClick();
           }}
           className="text-black text-2xl"
         >
-          Projects
+          Contact
           <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
         </button>
       </li>
       <li className="relative group">
         <button
           onClick={() => {
-            handleNavigate("/", "contact");
+            navigate('/portfolio');
             onClick && onClick();
           }}
           className="text-black text-2xl"
         >
-          Contact
+          Projects
           <span className="block h-1 bg-orange transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
         </button>
       </li>
@@ -113,8 +113,8 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed w-full top-0 left-0 z-40 transition-transform duration-300 ${
-          showNavbar ? "transform translate-y-0" : "transform -translate-y-full"
-        } ${isScrolled ? "bg-white" : "bg-transparent"}`}
+          showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full'
+        } ${isScrolled ? 'bg-white' : 'bg-transparent'}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-32">
@@ -169,7 +169,7 @@ export default function Navbar() {
       {/* Sidebar */}
       <div
         className={`fixed inset-y-0 right-0 z-50 w-[300px] bg-white transition-transform duration-300 ease-in-out ${
-          sidebarOpen ? "transform translate-x-0" : "transform translate-x-full"
+          sidebarOpen ? 'transform translate-x-0' : 'transform translate-x-full'
         } md:hidden`}
       >
         <div className="flex flex-col p-4 space-y-8 text-center items-center justify-center min-h-screen">
@@ -179,7 +179,11 @@ export default function Navbar() {
           >
             &times;
           </button>
-          <img src={FF} alt="Logo" className="h-28 mb-8" />
+          <div className="flex items-center space-x-2">
+            <a href="/">
+              <img src={FF} alt="Logo" className="h-28" />
+            </a>
+          </div>
           <ul className="space-y-6 font-poppins">
             <NavItems onClick={() => setSidebarOpen(false)} />
           </ul>
